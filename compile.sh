@@ -16,7 +16,5 @@ rm linux-$VERSION.tar.xz
 cp .config linux-$VERSION
 
 cd linux-$VERSION
-echo "cat $2 > ../vmlinuz" > arch/x86/boot/install.sh
-
 time make -j$(nproc) > /dev/null
-make install
+cp arch/x86/boot/bzImage vmlinuz
