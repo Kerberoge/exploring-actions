@@ -6,7 +6,7 @@ sudo apt-get install -qq libelf-dev linux-firmware
 
 # Extract firmware blobs
 for file in $(grep EXTRA_FIRMWARE= .config | sed -E 's/.*"(.*)"/\1/'); do
-	zstd -d /lib/firmware/$file.zst
+	sudo zstd -d /lib/firmware/$file.zst
 done
 
 curl -LO https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-$VERSION.tar.xz
