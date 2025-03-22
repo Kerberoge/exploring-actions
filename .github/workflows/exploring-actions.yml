@@ -7,6 +7,8 @@ jobs:
   Fastfetch-Output:
     runs-on: ubuntu-latest
     steps:
+      - run: sudo add-apt-repository 'ppa:zhangsongcui3371/fastfetch'
+      - run: sudo apt-get update
       - run: sudo apt-get install -qq fastfetch
       - run: fastfetch
 
