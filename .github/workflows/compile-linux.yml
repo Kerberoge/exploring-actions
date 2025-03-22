@@ -1,0 +1,19 @@
+name: Exploring Github Actions
+
+on: [push]
+
+jobs:
+
+  Fastfetch-Output:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install -qq fastfetch
+      - run: fastfetch
+
+  Compile-Linux-Kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Compilation Process
+        run: ./compile.sh
